@@ -41,6 +41,8 @@ npx prisma migrate dev --name init
 npm run dev
 ```
 
+6. Fluxo de testes disponivel em testes.http
+
 ---
 
 ## Tecnologias
