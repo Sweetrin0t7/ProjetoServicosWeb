@@ -4,28 +4,6 @@ API RESTful para gerenciamento de usuários e serviços, com autenticação via 
 
 ---
 
-## Tecnologias
-
-- Node.js + TypeScript  
-- Express  
-- Prisma ORM (SQLite)  
-- JSON Web Tokens (JWT)  
-- Zod para validação de dados  
-- bcrypt para hash de senha  
-
----
-
-## Funcionalidades
-
-- Cadastro de usuários comuns (auto registro)  
-- Login e geração de token JWT  
-- CRUD completo para serviços, vinculados ao usuário autenticado  
-- Usuários comuns só podem acessar/editar/excluir seus próprios serviços  
-- Rotas de usuário (listagem, busca, exclusão) restritas a admins  
-- Proteção de rotas via middleware de autenticação e autorização  
-
----
-
 ## Requisitos
 
 - Node.js 18+  
@@ -62,3 +40,26 @@ npx prisma migrate dev --name init
 ```
 npm run dev
 ```
+
+---
+
+## Tecnologias
+
+- Node.js + TypeScript  
+- Express  
+- Prisma ORM (SQLite)  
+- JSON Web Tokens (JWT)  
+- Zod para validação de dados  
+- bcrypt para hash de senha  
+
+---
+
+## Funcionalidades
+
+- Cadastro de usuários comuns (auto registro)  
+- Login e geração de token JWT  
+- CRUD completo para serviços, vinculados ao usuário autenticado  
+- Usuários comuns só podem acessar/editar/excluir seus próprios serviços  
+- Rotas de usuário (listagem, busca, exclusão) restritas a admins  
+- Proteção de rotas via middleware de autenticação e autorização  
+
