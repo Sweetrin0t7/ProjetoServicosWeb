@@ -1,0 +1,92 @@
+### Registrar novo usuário (COMUM)
+POST http://localhost:3333/register
+Content-Type: application/json
+
+{
+  "nome": "Renata",
+  "email": "renata@email.com",
+  "senha": "123456"
+}
+
+###
+
+### Login do usuário
+POST http://localhost:3333/login
+Content-Type: application/json
+
+{
+  "email": "renata@email.com",
+  "senha": "123456"
+}
+
+###
+
+# Substitua o token 
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsInJvbGUiOiJDT01VTSIsImlhdCI6MTc1MTcyOTMyOCwiZXhwIjoxNzUxODE1NzI4fQ.bE6OJ_g-F3V8nUIJIG6NnGTOPSQorfv2vGX-w-xR9ms
+
+### Criar serviço (autenticado)
+POST http://localhost:3333/services
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "nome": "Design de Unhas",
+  "descricao": "Manicure e pedicure com esmaltação em gel"
+}
+
+###
+
+### Listar serviços do usuário autenticado
+GET http://localhost:3333/services
+Authorization: Bearer {{token}}
+
+###
+
+### Atualizar serviço 
+PUT http://localhost:3333/services/1
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "descricao": "Descrição atualizada do serviço"
+}
+
+###
+
+### Deletar serviço (ID 1 - exemplo)
+DELETE http://localhost:3333/services/1
+Authorization: Bearer {{token}}
+
+###
+
+### Listar serviços (deve estar vazio)
+GET http://localhost:3333/services
+Authorization: Bearer {{token}}
+
+###
+
+### Listar todos os usuários (somente admin, deve dar token invalido)
+GET http://localhost:3333/users
+Authorization: Bearer {{{{token}}}}
+
+###
+
+### Login do usuário admin
+POST http://localhost:3333/login
+Content-Type: application/json
+
+{
+  "email": "admin@exemplo.com",
+  "senha": "admin123"
+}
+
+###
+
+# Substitua o token 
+@adminToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc1MTcyOTQ0NywiZXhwIjoxNzUxODE1ODQ3fQ.FT_EsabYvowpU3fP5Zi2qBNItL8XK3vS_ZBDAUXDYHU
+
+### Listar todos os usuários (somente admin, deve dar erro)
+GET http://localhost:3333/users
+Authorization: Bearer {{{{{{adminToken}}}}}}
+
+###

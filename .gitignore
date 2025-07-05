@@ -1,0 +1,32 @@
+
+# Dependências
+api-usuarios-servicos/node_modules/
+
+# Variáveis de ambiente
+api-usuarios-servicos/.env
+
+# Banco de dados SQLite
+api-usuarios-servicos/dev.db
+api-usuarios-servicos/dev.db-journal
+
+# Prisma gerado
+api-usuarios-servicos/.prisma/
+api-usuarios-servicos/generated/
+api-usuarios-servicos/generated/prisma/
+
+# Build / cache / transpile
+api-usuarios-servicos/dist/
+api-usuarios-servicos/build/
+api-usuarios-servicos/*.tsbuildinfo
+api-usuarios-servicos/.cache/
+api-usuarios-servicos/.tmp/
+
+# Logs
+api-usuarios-servicos/logs/
+api-usuarios-servicos/*.log
+api-usuarios-servicos/npm-debug.log*
+api-usuarios-servicos/yarn-debug.log*
+api-usuarios-servicos/yarn-error.log*
+
+# Editor config
+api-usuarios-servicos/.vscode/
